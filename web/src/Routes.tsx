@@ -7,7 +7,7 @@
 // 'src/pages/HomePage/HomePage.js'         -> HomePage
 // 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
 
-import { Router, Route, Set } from '@redwoodjs/router'
+import { Router, Route, Set, PrivateSet } from '@redwoodjs/router'
 
 import PortalLayout from 'src/layouts/PortalLayout'
 
@@ -23,8 +23,8 @@ const Routes = () => {
       <Set wrap={PortalLayout}>
         <Route path="/" page={HomePage} name="home" />
       </Set>
-      {/* <PrivateSet unauthenticated="home">
-      </PrivateSet> */}
+      {/* <PrivateSet unauthenticated="home" roles="ADMIN"> */}
+      {/* </PrivateSet> */}
       <Route notfound page={NotFoundPage} />
     </Router>
   )

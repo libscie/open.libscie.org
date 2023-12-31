@@ -15,4 +15,10 @@ model User {
   salt                String
   resetToken          String?
   resetTokenExpiresAt DateTime?
+  roles               Role      @default(USER)
+}
+
+enum Role {
+  ADMIN
+  USER
 }
