@@ -1,5 +1,7 @@
 # README
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/dc4f4863-3f29-4761-a398-277e6b44376c/deploy-status)](https://app.netlify.com/sites/open-libscie-org/deploys)
+
 Welcome to [RedwoodJS](https://redwoodjs.com)!
 
 > **Prerequisites**
