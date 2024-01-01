@@ -9,7 +9,7 @@ export const QUERY = gql`
     log: log(id: $id) {
       id
       time
-      title
+      activity
       type
       value
     }

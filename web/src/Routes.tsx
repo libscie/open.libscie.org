@@ -18,6 +18,12 @@ const Routes = () => {
   return (
     <Router useAuth={useAuth}>
       <Set wrap={ScaffoldLayout} title="Logs" titleTo="logs" buttonLabel="New Log" buttonTo="newLog">
+        <Route path="/logs/new" page={LogNewLogPage} name="newLog" />
+        <Route path="/logs/{id:Int}/edit" page={LogEditLogPage} name="editLog" />
+        <Route path="/logs/{id:Int}" page={LogLogPage} name="log" />
+        <Route path="/logs" page={LogLogsPage} name="logs" />
+      </Set>
+      <Set wrap={ScaffoldLayout} title="Logs" titleTo="logs" buttonLabel="New Log" buttonTo="newLog">
         <PrivateSet unauthenticated="home" roles="ADMIN">
           <Route path="/admin/logs/new" page={LogNewLogPage} name="newLog" />
           <Route path="/admin/logs/{id:Int}/edit" page={LogEditLogPage} name="editLog" />

@@ -1,8 +1,8 @@
 export const schema = gql`
   type Log {
     id: Int!
-    time: DateTime!
-    title: String!
+    time: DateTime
+    activity: Boolean!
     type: LogType!
     value: Float!
   }
@@ -17,15 +17,15 @@ export const schema = gql`
   }
 
   input CreateLogInput {
-    time: DateTime!
-    title: String!
+    time: DateTime
+    activity: Boolean!
     type: LogType!
     value: Float!
   }
 
   input UpdateLogInput {
     time: DateTime
-    title: String
+    activity: Boolean
     type: LogType
     value: Float
   }

@@ -2,7 +2,7 @@ import { Link, routes, navigate } from '@redwoodjs/router'
 import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
-import { formatEnum, timeTag } from 'src/lib/formatters'
+import { checkboxInputTag, formatEnum, timeTag } from 'src/lib/formatters'
 
 import type { DeleteLogMutationVariables, FindLogById } from 'types/graphql'
 
@@ -54,8 +54,8 @@ const Log = ({ log }: Props) => {
               <td>{timeTag(log.time)}</td>
             </tr>
             <tr>
-              <th>Title</th>
-              <td>{log.title}</td>
+              <th>Activity</th>
+              <td>{checkboxInputTag(log.activity)}</td>
             </tr>
             <tr>
               <th>Type</th>

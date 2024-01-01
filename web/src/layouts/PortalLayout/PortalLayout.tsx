@@ -15,7 +15,7 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
           <h1>
             <Link to={routes.home()}>Open Startup</Link>
           </h1>
-          {isAuthenticated ? (
+          {/* {isAuthenticated ? (
             <div>
               <span>Logged in as {currentUser.email}</span>{' '}
               <button type="button" onClick={logOut}>
@@ -24,15 +24,15 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
             </div>
           ) : (
             <Link to={routes.login()}>Login</Link>
-          )}
+          )} */}
         </div>
-        <nav>
+        {/* <nav>
           <ul>
             <li>
               <Link to={routes.home()}>Home</Link>
             </li>
           </ul>
-        </nav>
+        </nav> */}
       </header>
       <main>{children}</main>
     </>

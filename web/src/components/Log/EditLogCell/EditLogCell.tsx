@@ -12,7 +12,7 @@ export const QUERY = gql`
     log: log(id: $id) {
       id
       time
-      title
+      activity
       type
       value
     }
@@ -23,7 +23,7 @@ const UPDATE_LOG_MUTATION = gql`
     updateLog(id: $id, input: $input) {
       id
       time
-      title
+      activity
       type
       value
     }

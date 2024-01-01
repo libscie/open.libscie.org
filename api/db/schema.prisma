@@ -24,13 +24,16 @@ enum Role {
 }
 
 model Log {
-  id    Int      @id @default(autoincrement())
-  time  DateTime @default(now())
-  type  LogType
-  value Float
-  title String?
+  id   Int       @id @default(autoincrement())
+  time DateTime? @default(now())
+
+  activity Boolean @default(false)
+  type     LogType
+  value    Float
 }
 
 enum LogType {
   CashOnHand
+  // Document
+  // Event
 }

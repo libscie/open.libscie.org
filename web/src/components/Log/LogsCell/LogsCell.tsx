@@ -10,7 +10,7 @@ export const QUERY = gql`
     logs {
       id
       time
-      title
+      activity
       type
       value
     }

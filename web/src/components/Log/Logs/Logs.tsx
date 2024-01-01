@@ -3,7 +3,12 @@ import { useMutation } from '@redwoodjs/web'
 import { toast } from '@redwoodjs/web/toast'
 
 import { QUERY } from 'src/components/Log/LogsCell'
-import { formatEnum, timeTag, truncate } from 'src/lib/formatters'
+import {
+  checkboxInputTag,
+  formatEnum,
+  timeTag,
+  truncate,
+} from 'src/lib/formatters'
 
 import type { DeleteLogMutationVariables, FindLogs } from 'types/graphql'
 
@@ -43,7 +48,7 @@ const LogsList = ({ logs }: FindLogs) => {
           <tr>
             <th>Id</th>
             <th>Time</th>
-            <th>Title</th>
+            <th>Activity</th>
             <th>Type</th>
             <th>Value</th>
             <th>&nbsp;</th>
@@ -54,7 +59,7 @@ const LogsList = ({ logs }: FindLogs) => {
             <tr key={log.id}>
               <td>{truncate(log.id)}</td>
               <td>{timeTag(log.time)}</td>
-              <td>{truncate(log.title)}</td>
+              <td>{checkboxInputTag(log.activity)}</td>
               <td>{formatEnum(log.type)}</td>
               <td>{truncate(log.value)}</td>
               <td>

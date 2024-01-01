@@ -3,8 +3,9 @@ import {
   FormError,
   FieldError,
   Label,
-  TextField,
+  CheckboxField,
   RadioField,
+  TextField,
   Submit,
 } from '@redwoodjs/forms'
 
@@ -36,22 +37,21 @@ const LogForm = (props: LogFormProps) => {
         />
 
         <Label
-          name="title"
+          name="activity"
           className="rw-label"
           errorClassName="rw-label rw-label-error"
         >
-          Title
+          Activity
         </Label>
 
-        <TextField
-          name="title"
-          defaultValue={props.log?.title}
+        <CheckboxField
+          name="activity"
+          defaultChecked={props.log?.activity}
           className="rw-input"
           errorClassName="rw-input rw-input-error"
-          validation={{ required: true }}
         />
 
-        <FieldError name="title" className="rw-field-error" />
+        <FieldError name="activity" className="rw-field-error" />
 
         <Label
           name="type"

@@ -3,12 +3,8 @@ import type { ScenarioData } from '@redwoodjs/testing/api'
 
 export const standard = defineScenario<Prisma.LogCreateArgs>({
   log: {
-    one: {
-      data: { title: 'String', type: 'CashOnHand', value: 9461938.009954756 },
-    },
-    two: {
-      data: { title: 'String', type: 'CashOnHand', value: 1897152.0540306885 },
-    },
+    one: { data: { type: 'CashOnHand', value: 4032807.671876664 } },
+    two: { data: { type: 'CashOnHand', value: 5119160.101305109 } },
   },
 })
 
