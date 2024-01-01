@@ -65,3 +65,8 @@ body {
   border-radius: 20px;
   height: 100%;
 }
+
+footer {
+  text-align: center;
+  font-size: small;
+}

@@ -12,29 +12,29 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
     <>
       <header>
         <div className="flex-between">
-          <h1>
+          {/* <h1>
             <Link to={routes.home()}>Open Startup</Link>
-          </h1>
-          {/* {isAuthenticated ? (
+          </h1> */}
+          {isAuthenticated && (
             <div>
               <span>Logged in as {currentUser.email}</span>{' '}
               <button type="button" onClick={logOut}>
                 Logout
               </button>
             </div>
-          ) : (
-            <Link to={routes.login()}>Login</Link>
-          )} */}
+          )}
         </div>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to={routes.home()}>Home</Link>
-            </li>
-          </ul>
-        </nav> */}
       </header>
       <main>{children}</main>
+      <footer>
+        <p>
+          Managed by{' '}
+          <Link to="https://www.libscie.org">Liberate Science GmbH</Link>.
+        </p>
+        <p>
+          <Link to={routes.login()}>Log in</Link>.
+        </p>
+      </footer>
     </>
   )
 }
