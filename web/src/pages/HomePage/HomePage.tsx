@@ -28,7 +28,7 @@ const HomePage = () => {
           </Grid.Col>
           <Grid.Col span={{ base: 12, xs: 4 }}>
             <SingleStatistic
-              title="Net worth"
+              title="Net assets"
               description="Non-cash assets + cash - liabilities"
               value="???"
             />
@@ -51,6 +51,13 @@ const HomePage = () => {
             <SingleStatistic
               title="Burn rate"
               description="Average spend per month"
+              value="???"
+            />
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 4 }}>
+            <SingleStatistic
+              title="Cash runway"
+              description="Months based on cash"
               value="???"
             />
           </Grid.Col>

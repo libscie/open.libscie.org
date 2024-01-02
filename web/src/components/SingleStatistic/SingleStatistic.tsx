@@ -4,7 +4,7 @@ import classes from './SingleStatistic.module.css'
 
 const SingleStatistic = ({ title, description, value }) => {
   return (
-    <Paper withBorder p="md" radius="md" key={title}>
+    <Paper withBorder p="md" radius="lg" key={title}>
       <Group justify="space-between">
         <Text size="xs" c="dimmed" className={classes.title}>
           {title}
