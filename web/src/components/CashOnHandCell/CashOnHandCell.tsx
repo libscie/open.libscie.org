@@ -1,9 +1,12 @@
+import { Group, Paper, SimpleGrid, Text, Grid, Skeleton } from '@mantine/core'
 import type {
   FindCashOnHandQuery,
   FindCashOnHandQueryVariables,
 } from 'types/graphql'
 
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
+
+import SingleStatistic from 'src/components/SingleStatistic'
 
 export const QUERY = gql`
   query FindCashOnHandQuery {
@@ -24,20 +27,22 @@ export const Failure = ({
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
+const child = <Skeleton height={113.4} radius="md" animate={false} />
+
 export const Success = ({
   cashOnHand,
 }: CellSuccessProps<FindCashOnHandQuery, FindCashOnHandQueryVariables>) => {
   return (
-    <div>
+    <>
       {/* Component for latest cashOnHand */}
-      <div>
-        Current cash on hand:{' '}
-        <span>
-          {cashOnHand[cashOnHand.length - 1].value}
-        </span>
-      </div>
+      <Grid.Col span={{ base: 12, xs: 4 }}>
+        <SingleStatistic
+          title="Cash On Hand"
+          value={cashOnHand[cashOnHand.length - 1].value}
+        />
+      </Grid.Col>
       {/* Component for historical cashOnHand charting */}
-      {JSON.stringify(cashOnHand)}
-    </div>
+      <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
+    </>
   )
 }
