@@ -1,4 +1,5 @@
-import { Group, Paper, SimpleGrid, Text, Grid, Skeleton } from '@mantine/core'
+import { Grid, Skeleton } from '@mantine/core'
+import CurrencyFormat from 'react-currency-format'
 import type {
   FindCashOnHandQuery,
   FindCashOnHandQueryVariables,
@@ -44,7 +45,14 @@ export const Success = ({
       <Grid.Col span={{ base: 12, xs: 4 }}>
         <SingleStatistic
           title="Cash On Hand"
-          value={cashOnHand[cashOnHand.length - 1].value}
+          value={
+            <CurrencyFormat
+              value={cashOnHand[cashOnHand.length - 1].value}
+              displayType={'text'}
+              thousandSeparator={true}
+              prefix={'€'}
+            />
+          }
         />
       </Grid.Col>
       {/* Component for historical cashOnHand charting */}

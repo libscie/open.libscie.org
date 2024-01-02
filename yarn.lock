@@ -16816,7 +16816,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prop-types@npm:15.8.1, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
+"prop-types@npm:15.8.1, prop-types@npm:^15.6.0, prop-types@npm:^15.7.2, prop-types@npm:^15.8.1":
   version: 15.8.1
   resolution: "prop-types@npm:15.8.1"
   dependencies:
@@ -17065,6 +17065,18 @@ __metadata:
   bin:
     rc: ./cli.js
   checksum: 24a07653150f0d9ac7168e52943cc3cb4b7a22c0e43c7dff3219977c2fdca5a2760a304a029c20811a0e79d351f57d46c9bde216193a0f73978496afc2b85b15
+  languageName: node
+  linkType: hard
+
+"react-currency-format@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "react-currency-format@npm:1.1.0"
+  dependencies:
+    prop-types: ^15.6.0
+  peerDependencies:
+    react: ^0.14 || ^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.0.0 || ^17.0.0
+    react-dom: ^0.14 || ^15.0.0-rc || ^15.0.0 || ^16.0.0-rc || ^16.0.0 || ^17.0.0
+  checksum: 99da77de646ea71672216abef09e570fba6e01c5244646529a7107340a298bd4d1188b97aa6cf3f039374dbc6eff2df93b487e2c3c73daf3b7375e295d04d59f
   languageName: node
   linkType: hard
 
@@ -20343,6 +20355,7 @@ __metadata:
     postcss-simple-vars: ^7.0.1
     prop-types: 15.8.1
     react: 18.2.0
+    react-currency-format: ^1.1.0
     react-dom: 18.2.0
   languageName: unknown
   linkType: soft
