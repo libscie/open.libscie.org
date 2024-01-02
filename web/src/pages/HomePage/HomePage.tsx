@@ -56,8 +56,8 @@ const HomePage = () => {
           </Grid.Col>
           <Grid.Col span={{ base: 12, xs: 4 }}>
             <SingleStatistic
-              title="Cash runway"
-              description="Months based on cash"
+              title="Runway"
+              description="Cash on hand/burn rate"
               value="???"
             />
           </Grid.Col>

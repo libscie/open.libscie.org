@@ -1,3 +1,5 @@
+import { MantineProvider } from '@mantine/core'
+
 import { render } from '@redwoodjs/testing/web'
 
 import HomePage from './HomePage'
@@ -8,7 +10,11 @@ import HomePage from './HomePage'
 describe('HomePage', () => {
   it('renders successfully', () => {
     expect(() => {
-      render(<HomePage />)
+      render(
+        <MantineProvider>
+          <HomePage />
+        </MantineProvider>
+      )
     }).not.toThrow()
   })
 })

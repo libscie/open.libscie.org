@@ -24,21 +24,21 @@ describe('logs', () => {
 
   scenario('creates a log', async () => {
     const result = await createLog({
-      input: { type: 'CashOnHand', value: 2544376.383241147 },
+      input: { type: 'CashOnHand', value: 4036291.7819043687 },
     })
 
     expect(result.type).toEqual('CashOnHand')
-    expect(result.value).toEqual(2544376.383241147)
+    expect(result.value).toEqual(4036291.7819043687)
   })
 
   scenario('updates a log', async (scenario: StandardScenario) => {
     const original = (await log({ id: scenario.log.one.id })) as Log
     const result = await updateLog({
       id: original.id,
-      input: { type: 'CashOnHand' },
+      input: { type: 'NetAssets' },
     })
 
-    expect(result.type).toEqual('CashOnHand')
+    expect(result.type).toEqual('NetAssets')
   })
 
   scenario('deletes a log', async (scenario: StandardScenario) => {

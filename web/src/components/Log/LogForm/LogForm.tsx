@@ -73,6 +73,42 @@ const LogForm = (props: LogFormProps) => {
           <div>Cashonhand</div>
         </div>
 
+        <div className="rw-check-radio-items">
+          <RadioField
+            id="log-type-1"
+            name="type"
+            defaultValue="NonCashAssets"
+            defaultChecked={props.log?.type?.includes('NonCashAssets')}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+          />
+          <div>Noncashassets</div>
+        </div>
+
+        <div className="rw-check-radio-items">
+          <RadioField
+            id="log-type-2"
+            name="type"
+            defaultValue="Liabilities"
+            defaultChecked={props.log?.type?.includes('Liabilities')}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+          />
+          <div>Liabilities</div>
+        </div>
+
+        <div className="rw-check-radio-items">
+          <RadioField
+            id="log-type-3"
+            name="type"
+            defaultValue="NetAssets"
+            defaultChecked={props.log?.type?.includes('NetAssets')}
+            className="rw-input"
+            errorClassName="rw-input rw-input-error"
+          />
+          <div>Netassets</div>
+        </div>
+
         <FieldError name="type" className="rw-field-error" />
 
         <Label
