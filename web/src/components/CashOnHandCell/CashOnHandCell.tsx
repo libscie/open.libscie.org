@@ -27,5 +27,17 @@ export const Failure = ({
 export const Success = ({
   cashOnHand,
 }: CellSuccessProps<FindCashOnHandQuery, FindCashOnHandQueryVariables>) => {
-  return <div>{JSON.stringify(cashOnHand)}</div>
+  return (
+    <div>
+      {/* Component for latest cashOnHand */}
+      <div>
+        Current cash on hand:{' '}
+        <span>
+          {cashOnHand[cashOnHand.length - 1].value}
+        </span>
+      </div>
+      {/* Component for historical cashOnHand charting */}
+      {JSON.stringify(cashOnHand)}
+    </div>
+  )
 }
