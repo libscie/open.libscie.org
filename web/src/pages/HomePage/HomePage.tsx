@@ -4,6 +4,7 @@ import { Metadata } from '@redwoodjs/web'
 
 import CashOnHandCell from 'src/components/CashOnHandCell'
 import LiabilitiesCell from 'src/components/LiabilitiesCell'
+import NetAssetsCell from 'src/components/NetAssetsCell'
 import NonCashAssetsCell from 'src/components/NonCashAssetsCell'
 import SingleStatistic from 'src/components/SingleStatistic'
 
@@ -16,13 +17,7 @@ const HomePage = () => {
           <CashOnHandCell />
           <NonCashAssetsCell />
           <LiabilitiesCell />
-          <Grid.Col span={{ base: 12, xs: 4 }}>
-            <SingleStatistic
-              title="Net assets"
-              description="Non-cash assets + cash - liabilities"
-              value="???"
-            />
-          </Grid.Col>
+          <NetAssetsCell />
           <Grid.Col span={{ base: 12, xs: 4 }}>
             <SingleStatistic
               title="MAU"
