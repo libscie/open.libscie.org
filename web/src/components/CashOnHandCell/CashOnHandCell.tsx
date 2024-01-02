@@ -1,4 +1,5 @@
 import { Grid, Skeleton } from '@mantine/core'
+import ParentSize from '@visx/responsive/lib/components/ParentSize'
 import CurrencyFormat from 'react-currency-format'
 import type {
   FindCashOnHandQuery,
@@ -8,6 +9,8 @@ import type {
 import type { CellSuccessProps, CellFailureProps } from '@redwoodjs/web'
 
 import SingleStatistic from 'src/components/SingleStatistic'
+
+import CashOnHandHistory from '../CashOnHandHistory/CashOnHandHistory'
 
 export const QUERY = gql`
   query FindCashOnHandQuery {
@@ -56,7 +59,13 @@ export const Success = ({
         />
       </Grid.Col>
       {/* Component for historical cashOnHand charting */}
-      <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
+      <Grid.Col span={{ base: 12, xs: 8 }}>
+        <ParentSize>
+          {({ width }) => (
+            <CashOnHandHistory width={width} height={113.4} data={cashOnHand} />
+          )}
+        </ParentSize>
+      </Grid.Col>
     </>
   )
 }
