@@ -17,9 +17,15 @@ export const QUERY = gql`
   }
 `
 
-export const Loading = () => <div>Loading...</div>
+export const Loading = () => (
+  <>
+    <Grid.Col span={{ base: 12, xs: 4 }}>{child}</Grid.Col>
+    {/* Component for historical cashOnHand charting */}
+    <Grid.Col span={{ base: 12, xs: 8 }}>{child}</Grid.Col>
+  </>
+)
 
-export const Empty = () => <div>Empty</div>
+export const Empty = () => <></>
 
 export const Failure = ({
   error,
