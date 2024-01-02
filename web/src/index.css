@@ -53,18 +53,6 @@ body {
   background-color: #b2def2;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  column-gap: 1rem;
-  row-gap: 1rem;
-}
-
-.grid-item {
-  background-color: #f9fafb;
-  border-radius: 20px;
-  height: 100%;
-}
 
 footer {
   text-align: center;

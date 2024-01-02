@@ -11,6 +11,7 @@ const HomePage = () => {
       <Container my="md">
         <Grid>
           <CashOnHandCell />
+          <CashOnHandCell />
         </Grid>
       </Container>
     </>
