@@ -3,6 +3,7 @@ import { Grid, Container } from '@mantine/core'
 import { Metadata } from '@redwoodjs/web'
 
 import CashOnHandCell from 'src/components/CashOnHandCell'
+import NonCashAssetsCell from 'src/components/NonCashAssetsCell'
 import SingleStatistic from 'src/components/SingleStatistic'
 
 const HomePage = () => {
@@ -12,13 +13,7 @@ const HomePage = () => {
       <Container my="md">
         <Grid>
           <CashOnHandCell />
-          <Grid.Col span={{ base: 12, xs: 4 }}>
-            <SingleStatistic
-              title="Non-cash assets"
-              description="Term deposits, etc."
-              value="???"
-            />
-          </Grid.Col>
+          <NonCashAssetsCell />
           <Grid.Col span={{ base: 12, xs: 4 }}>
             <SingleStatistic
               title="Liabilities"
