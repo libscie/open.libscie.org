@@ -14,8 +14,8 @@ const HomePage = () => {
           <CashOnHandCell />
           <Grid.Col span={{ base: 12, xs: 4 }}>
             <SingleStatistic
-              title="Assets"
-              description="Non-liquid property"
+              title="Non-cash assets"
+              description="Term deposits, etc."
               value="???"
             />
           </Grid.Col>
@@ -24,6 +24,13 @@ const HomePage = () => {
               title="Liabilities"
               description="Negative assets (e.g., debt)"
               value="€0"
+            />
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 4 }}>
+            <SingleStatistic
+              title="Net worth"
+              description="Non-cash assets + cash - liabilities"
+              value="???"
             />
           </Grid.Col>
           <Grid.Col span={{ base: 12, xs: 4 }}>
