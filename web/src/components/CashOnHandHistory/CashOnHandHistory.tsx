@@ -4,7 +4,6 @@ import { curveMonotoneX } from '@visx/curve'
 import { localPoint } from '@visx/event'
 import { LinearGradient } from '@visx/gradient'
 import { GridRows, GridColumns } from '@visx/grid'
-import appleStock, { AppleStock } from '@visx/mock-data/lib/mocks/appleStock'
 import { scaleTime, scaleLinear } from '@visx/scale'
 import { AreaClosed, Line, Bar } from '@visx/shape'
 import {
@@ -16,10 +15,10 @@ import {
 import { WithTooltipProvidedProps } from '@visx/tooltip/lib/enhancers/withTooltip'
 import { max, extent, bisector } from '@visx/vendor/d3-array'
 import { timeFormat } from '@visx/vendor/d3-time-format'
+import { Log } from 'types/graphql'
 
-type TooltipData = AppleStock
+type TooltipData = Log
 
-const stock = appleStock.slice(800)
 export const background = '#3b6978'
 export const background2 = '#204051'
 export const accentColor = '#edffea'
@@ -35,13 +34,14 @@ const tooltipStyles = {
 const formatDate = timeFormat("%b %d, '%y")
 
 // accessors
-const getDate = (d: AppleStock) => new Date(d.date)
-const getStockValue = (d: AppleStock) => d.close
-const bisectDate = bisector<AppleStock, Date>((d) => new Date(d.date)).left
+const getDate = (d: Log) => new Date(d.time)
+const getValue = (d: Log) => d.value
+const bisectDate = bisector<Log, Date>((d) => new Date(d.time)).left
 
 export type AreaProps = {
   width: number
   height: number
+  data: Array<Log>
   margin?: { top: number; right: number; bottom: number; left: number }
 }
 
@@ -49,6 +49,7 @@ export default withTooltip<AreaProps, TooltipData>(
   ({
     width,
     height,
+    data,
     margin = { top: 0, right: 0, bottom: 0, left: 0 },
     showTooltip,
     hideTooltip,
@@ -67,7 +68,7 @@ export default withTooltip<AreaProps, TooltipData>(
       () =>
         scaleTime({
           range: [margin.left, innerWidth + margin.left],
-          domain: extent(stock, getDate) as [Date, Date],
+          domain: extent(data, getDate) as [Date, Date],
         }),
       [innerWidth, margin.left]
     )
@@ -75,7 +76,7 @@ export default withTooltip<AreaProps, TooltipData>(
       () =>
         scaleLinear({
           range: [innerHeight + margin.top, margin.top],
-          domain: [0, (max(stock, getStockValue) || 0) + innerHeight / 3],
+          domain: [0, (max(data, getValue) || 0) + innerHeight / 3],
           nice: true,
         }),
       [margin.top, innerHeight]
@@ -90,9 +91,9 @@ export default withTooltip<AreaProps, TooltipData>(
       ) => {
         const { x } = localPoint(event) || { x: 0 }
         const x0 = dateScale.invert(x)
-        const index = bisectDate(stock, x0, 1)
-        const d0 = stock[index - 1]
-        const d1 = stock[index]
+        const index = bisectDate(data, x0, 1)
+        const d0 = data[index - 1]
+        const d1 = data[index]
         let d = d0
         if (d1 && getDate(d1)) {
           d =
@@ -104,7 +105,7 @@ export default withTooltip<AreaProps, TooltipData>(
         showTooltip({
           tooltipData: d,
           tooltipLeft: x,
-          tooltipTop: stockValueScale(getStockValue(d)),
+          tooltipTop: stockValueScale(getValue(d)),
         })
       },
       [showTooltip, stockValueScale, dateScale]
@@ -150,10 +151,10 @@ export default withTooltip<AreaProps, TooltipData>(
             strokeOpacity={0.2}
             pointerEvents="none"
           />
-          <AreaClosed<AppleStock>
-            data={stock}
+          <AreaClosed<Log>
+            data={data}
             x={(d) => dateScale(getDate(d)) ?? 0}
-            y={(d) => stockValueScale(getStockValue(d)) ?? 0}
+            y={(d) => stockValueScale(getValue(d)) ?? 0}
             yScale={stockValueScale}
             strokeWidth={1}
             stroke="url(#area-gradient)"
@@ -213,7 +214,7 @@ export default withTooltip<AreaProps, TooltipData>(
               left={tooltipLeft + 12}
               style={tooltipStyles}
             >
-              {`$${getStockValue(tooltipData)}`}
+              {`€${getValue(tooltipData)}`}
             </TooltipWithBounds>
             <Tooltip
               top={innerHeight + margin.top - 14}

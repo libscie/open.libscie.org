@@ -15,6 +15,9 @@ import CashOnHandHistory from '../CashOnHandHistory/CashOnHandHistory'
 export const QUERY = gql`
   query FindCashOnHandQuery {
     cashOnHand: logsType(type: CashOnHand) {
+      id
+      type
+      activity
       time
       value
     }
