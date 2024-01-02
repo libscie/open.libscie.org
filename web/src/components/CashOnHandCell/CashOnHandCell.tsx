@@ -40,7 +40,7 @@ export const Failure = ({
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-const child = <Skeleton height={113.4} radius="md" animate={false} />
+const child = <Skeleton height={113.4} radius="md" animate={true} />
 
 export const Success = ({
   cashOnHand,
