@@ -12,8 +12,9 @@ export const schema = gql`
   }
 
   type Query {
-    logs: [Log!]! @requireAuth
-    log(id: Int!): Log @requireAuth
+    logsType(type: LogType!): [Log!]! @skipAuth
+    logs: [Log!]! @skipAuth
+    log(id: Int!): Log @skipAuth
   }
 
   input CreateLogInput {

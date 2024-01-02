@@ -6,6 +6,17 @@ export const logs: QueryResolvers['logs'] = () => {
   return db.log.findMany()
 }
 
+export const logsType: QueryResolvers['logsType'] = () => {
+  return db.log.findMany({
+    where: {
+      type: 'CashOnHand',
+    },
+    orderBy: {
+      time: 'asc',
+    },
+  })
+}
+
 export const log: QueryResolvers['log'] = ({ id }) => {
   return db.log.findUnique({
     where: { id },

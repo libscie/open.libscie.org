@@ -15,24 +15,25 @@ const PortalLayout = ({ children }: PortalLayoutProps) => {
           {/* <h1>
             <Link to={routes.home()}>Open Startup</Link>
           </h1> */}
-          {isAuthenticated && (
+        </div>
+      </header>
+      <main>{children}</main>
+      <footer>
+        <p>
+          Managed by <Link to="https://libscie.org">Liberate Science GmbH</Link>
+          .
+        </p>
+        <p>
+          {isAuthenticated ? (
             <div>
               <span>Logged in as {currentUser.email}</span>{' '}
               <button type="button" onClick={logOut}>
                 Logout
               </button>
             </div>
+          ) : (
+            <Link to={routes.login()}>Log in</Link>
           )}
-        </div>
-      </header>
-      <main>{children}</main>
-      <footer>
-        <p>
-          Managed by{' '}
-          <Link to="https://www.libscie.org">Liberate Science GmbH</Link>.
-        </p>
-        <p>
-          <Link to={routes.login()}>Log in</Link>.
         </p>
       </footer>
     </>
