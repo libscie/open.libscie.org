@@ -40,7 +40,7 @@ export const Failure = ({
   <div style={{ color: 'red' }}>Error: {error?.message}</div>
 )
 
-const child = <Skeleton height={113.4} radius="md" animate={true} />
+const child = <Skeleton height={130.2} radius="md" animate={true} />
 
 export const Success = ({
   cashOnHand,
@@ -51,6 +51,7 @@ export const Success = ({
       <Grid.Col span={{ base: 12, xs: 4 }}>
         <SingleStatistic
           title="Cash On Hand"
+          description="Money in account(s)"
           value={
             <CurrencyFormat
               value={cashOnHand[cashOnHand.length - 1].value}
@@ -65,7 +66,7 @@ export const Success = ({
       <Grid.Col span={{ base: 12, xs: 8 }}>
         <ParentSize>
           {({ width }) => (
-            <CashOnHandHistory width={width} height={113.4} data={cashOnHand} />
+            <CashOnHandHistory width={width} height={130.2} data={cashOnHand} />
           )}
         </ParentSize>
       </Grid.Col>
