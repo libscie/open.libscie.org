@@ -18,7 +18,7 @@ const HomePage = () => {
           <NonCashAssetsCell />
           <LiabilitiesCell />
           <NetAssetsCell />
-          {/* <Grid.Col span={{ base: 12, xs: 4 }}>
+          <Grid.Col span={{ base: 12, xs: 4 }}>
             <SingleStatistic
               title="MAU"
               description="Monthly Active Users"
@@ -45,7 +45,14 @@ const HomePage = () => {
               description="Cash on hand/burn rate"
               value="???"
             />
-          </Grid.Col> */}
+          </Grid.Col>
+          <Grid.Col span={{ base: 12, xs: 4 }}>
+            <SingleStatistic
+              title="Most recent blog"
+              description="On https://libscie.org"
+              value="???"
+            />
+          </Grid.Col>
         </Grid>
       </Container>
     </>
