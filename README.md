@@ -1,8 +1,12 @@
-# README
+# `open.libscie.org`
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/dc4f4863-3f29-4761-a398-277e6b44376c/deploy-status)](https://app.netlify.com/sites/open-libscie-org/deploys)
 
-Welcome to [RedwoodJS](https://redwoodjs.com)!
+Welcome to the repository for the web application `open.libscie.org`. We use this web app as a way to be transparent about our startup business (we call this our Open Startup Strategy - but see also our disclaimer regarding the provided information).
+
+For this web application, we use [RedwoodJS](https://redwoodjs.com), deployed to Netlify. We use the [Mantine](https://mantine.dev/getting-started/) component library for React (see also their [pre-assembled UI components](https://ui.mantine.dev/)).
+
+We do not seek external contributions on this repository. That being said, we are happy to engage with you in the issues if you have questions.
 
 > **Prerequisites**
 >
