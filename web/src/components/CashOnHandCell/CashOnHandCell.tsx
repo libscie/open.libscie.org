@@ -32,7 +32,26 @@ export const Loading = () => (
   </>
 )
 
-export const Empty = () => <></>
+export const Empty = () => (
+  <>
+    {/* Component for latest cashOnHand */}
+    <Grid.Col span={{ base: 12, xs: 4 }}>
+      <SingleStatistic
+        title="Cash On Hand"
+        description="Money in account(s)"
+        value="???"
+      />
+    </Grid.Col>
+    {/* Component for historical cashOnHand charting */}
+    <Grid.Col span={{ base: 12, xs: 8 }}>
+      <ParentSize>
+        {({ width }) => (
+          <CashOnHandHistory width={width} height={130.2} data={[]} />
+        )}
+      </ParentSize>
+    </Grid.Col>
+  </>
+)
 
 export const Failure = ({
   error,
