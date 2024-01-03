@@ -10,6 +10,10 @@ export const QUERY = gql`
   query NetAssetsQuery {
     netAssets: logsType(type: NetAssets) {
       id
+      type
+      activity
+      time
+      value
     }
   }
 `
