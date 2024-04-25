@@ -113,3 +113,13 @@ Here are some ideas of things you could try…
     Visit <a href="https://github.com/observablehq/framework">Framework on GitHub</a> and give us a star. Or file an issue if you’ve found a bug!
   </div>
 </div>
+
+---
+
+## Disclaimer
+
+The information provided on the website https://open.libscie.org is provided for informational purposes only.
+
+We do not guarantee the accuracy of provided information. No rights or obligations can be inferred from the information as a result.
+
+Information may be changed at any time at the sole discretion of Liberate Science GmbH.
