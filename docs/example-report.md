@@ -73,3 +73,38 @@ The advent of small satellite constellations, such as Starlink by SpaceX, has fu
 As technology continues to advance and global interest in space exploration grows, the future promises even more exciting developments in the realm of rocket launches and space travel.
 
 Exploration will not only be limited to the Moon or Mars, but extend to other parts of our solar system such as Jupiter and Saturn’s moons, and beyond.
+
+
+<div class="grid grid-cols-2" style="grid-auto-rows: 504px;">
+  <div class="card">${
+    resize((width) => Plot.plot({
+      title: "Your awesomeness over time 🚀",
+      subtitle: "Up and to the right!",
+      width,
+      y: {grid: true, label: "Awesomeness"},
+      marks: [
+        Plot.ruleY([0]),
+        Plot.lineY(aapl, {x: "Date", y: "Close", tip: true})
+      ]
+    }))
+  }</div>
+  <div class="card">${
+    resize((width) => Plot.plot({
+      title: "How big are penguins, anyway? 🐧",
+      width,
+      grid: true,
+      x: {label: "Body mass (g)"},
+      y: {label: "Flipper length (mm)"},
+      color: {legend: true},
+      marks: [
+        Plot.linearRegressionY(penguins, {x: "body_mass_g", y: "flipper_length_mm", stroke: "species"}),
+        Plot.dot(penguins, {x: "body_mass_g", y: "flipper_length_mm", stroke: "species", tip: true})
+      ]
+    }))
+  }</div>
+</div>
+
+```js
+const aapl = FileAttachment("aapl.csv").csv({typed: true});
+const penguins = FileAttachment("penguins.csv").csv({typed: true});
+```
