@@ -49,14 +49,28 @@ const liabilities = FileAttachment("data/Liabilities.csv").csv({typed: true});
 const assets = FileAttachment("data/NonCashAssets.csv").csv({typed: true});
 ```
 
+
 <div class="hero">
   <h1>Our open journey, in numbers</h1>
   <h2>We keep on evolving what's here, so check back every now and then.</h2>
   <a href="https://www.libscie.org">Visit our main website<span style="display: inline-block; margin-left: 0.25rem;">↗︎</span></a>
 </div>
 
+```js
+cash.sort((a, b) => new Date(a.date) - new Date(b.date));
+const mostRecentCashValue = cash[cash.length - 1];
+
+liabilities.sort((a, b) => new Date(a.date) - new Date(b.date));
+const mostRecentLiabilityValue = liabilities[liabilities.length - 1];
+
+assets.sort((a, b) => new Date(a.date) - new Date(b.date));
+const mostRecentAssetValue = assets[assets.length - 1];
+```
+
 <div class="grid grid-cols-3">
-  <div class="card"><h2></h2><span class="big"></span></div>
+  <div class="card"><h2>Cash on hand</h2><span class="big">€${(mostRecentCashValue.amount).toLocaleString()}</span></div>
+  <div class="card"><h2>Non-cash assets</h2><span class="big">€${(mostRecentAssetValue.amount).toLocaleString()}</span></div>
+  <div class="card"><h2>Liabilities</h2><span class="big">€${(mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
 </div>
 
 ---
