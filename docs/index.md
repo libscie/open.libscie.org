@@ -41,13 +41,22 @@ toc: false
     font-size: 90px;
   }
 }
-
 </style>
+
+```js
+const cash = FileAttachment('./data/CashOnHand.csv').csv({typed: true});
+const liabilities = FileAttachment("data/Liabilities.csv").csv({typed: true});
+const assets = FileAttachment("data/NonCashAssets.csv").csv({typed: true});
+```
 
 <div class="hero">
   <h1>Our open journey, in numbers</h1>
   <h2>We keep on evolving what's here, so check back every now and then.</h2>
   <a href="https://www.libscie.org">Visit our main website<span style="display: inline-block; margin-left: 0.25rem;">↗︎</span></a>
+</div>
+
+<div class="grid grid-cols-3">
+  <div class="card"><h2></h2><span class="big"></span></div>
 </div>
 
 ---
