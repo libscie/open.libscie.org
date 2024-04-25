@@ -76,8 +76,8 @@ const mostRecentAssetValue = assets[assets.length - 1];
 <div class="grid grid-cols-1">
   <div class="card">${
       resize((width) => Plot.plot({
-        title: "Your awesomeness over time 🚀",
-        subtitle: "Up and to the right!",
+        title: "Finance metrics over time",
+        subtitle: "Subject to collection start",
         width,
         y: {grid: true, label: "Amount in €"},
         marks: [
