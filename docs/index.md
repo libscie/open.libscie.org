@@ -73,6 +73,22 @@ const mostRecentAssetValue = assets[assets.length - 1];
   <div class="card"><h2>Liabilities</h2><span class="big">€${(mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
 </div>
 
+<div class="grid grid-cols-1">
+  <div class="card">${
+      resize((width) => Plot.plot({
+        title: "Your awesomeness over time 🚀",
+        subtitle: "Up and to the right!",
+        width,
+        y: {grid: true, label: "Amount in €"},
+        marks: [
+          Plot.ruleY([0]),
+          Plot.lineY(assets, {x: "date", y: "amount", tip: true, stroke: "orange"}),
+          Plot.lineY(liabilities, {x: "date", y: "amount", tip: true, stroke: "red"})
+        ]
+      }))
+    }</div>
+</div>
+
 ---
 
 ## Disclaimer
