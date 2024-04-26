@@ -47,6 +47,7 @@ toc: false
 const cash = FileAttachment('./data/CashOnHand.csv').csv({typed: true});
 const liabilities = FileAttachment("data/Liabilities.csv").csv({typed: true});
 const assets = FileAttachment("data/NonCashAssets.csv").csv({typed: true});
+const quarterlies = FileAttachment("data/quarterly-numbers-revenue.csv").csv({typed: true});
 ```
 
 
@@ -77,7 +78,7 @@ const pending = 1000 + 3500 + 1200
   <div class="card"><h2>Pending income</h2><span class="big">€${(pending).toLocaleString()}</span></div>
 </div>
 
-<div class="grid grid-cols-1">
+<div class="grid grid-cols-2">
   <div class="card">${
       resize((width) => Plot.plot({
         title: "Finance metrics over time",
@@ -91,6 +92,18 @@ const pending = 1000 + 3500 + 1200
         ]
       }))
     }</div>
+    <div class="card">${
+    resize((width) => Plot.plot({
+      title: "Quarterly margins",
+      subtitle: "Revenue / costs",
+      width,
+      y: {grid: true, label: "Revenue / costs", max: 1.2},
+      marks: [
+        Plot.ruleY([1]),
+        Plot.lineY(quarterlies, {x: "date", y: "revenue", tip: true, stroke: "green"})
+      ]
+    }))
+  }</div>
 </div>
 
 ---
