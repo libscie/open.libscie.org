@@ -71,11 +71,9 @@ const pending = 1000 + 3500 + 1200
 ```
 
 <div class="grid grid-cols-3">
-  <div class="card"><h2>Cash on hand</h2><span class="big">€${(mostRecentCashValue.amount).toLocaleString()}</span></div>
-  <div class="card"><h2>Non-cash assets</h2><span class="big">€${(mostRecentAssetValue.amount).toLocaleString()}</span></div>
-  <div class="card"><h2>Liabilities</h2><span class="big">€${(mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
-  <div class="card grid-colspan-2"><h2>Net assets</h2><span class="big">€${(mostRecentCashValue.amount + mostRecentAssetValue.amount  + mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
-  <div class="card"><h2>Pending income</h2><span class="big">€${(pending).toLocaleString()}</span></div>
+  <div class="card"><h2>🟣 Cash on hand</h2><span class="big">€${(mostRecentCashValue.amount).toLocaleString()}</span></div>
+  <div class="card"><h2>🟠 Non-cash assets</h2><span class="big">€${(mostRecentAssetValue.amount).toLocaleString()}</span></div>
+  <div class="card"><h2>🔴 Liabilities</h2><span class="big">€${(mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
 </div>
 
 <div class="grid grid-cols-2">
@@ -88,7 +86,8 @@ const pending = 1000 + 3500 + 1200
         marks: [
           Plot.ruleY([0]),
           Plot.lineY(assets, {x: "date", y: "amount", tip: true, stroke: "orange"}),
-          Plot.lineY(liabilities, {x: "date", y: "amount", tip: true, stroke: "red"})
+          Plot.lineY(liabilities, {x: "date", y: "amount", tip: true, stroke: "red"}),
+          Plot.lineY(cash, {x: "date", y: "amount", tip: true, stroke: "violet"})
         ]
       }))
     }</div>
@@ -106,6 +105,10 @@ const pending = 1000 + 3500 + 1200
   }</div>
 </div>
 
+<div class="grid grid-cols-3">
+  <div class="card grid-colspan-2"><h2>Net assets</h2><span class="big">€${(mostRecentCashValue.amount + mostRecentAssetValue.amount  + mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
+  <div class="card"><h2>Pending income</h2><span class="big">€${(pending).toLocaleString()}</span></div>
+</div>
 ---
 
 ## Disclaimer
