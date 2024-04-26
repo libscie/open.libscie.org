@@ -65,13 +65,16 @@ const mostRecentLiabilityValue = liabilities[liabilities.length - 1];
 
 assets.sort((a, b) => new Date(a.date) - new Date(b.date));
 const mostRecentAssetValue = assets[assets.length - 1];
+
+const pending = 1000 + 3500 + 1200
 ```
 
 <div class="grid grid-cols-3">
   <div class="card"><h2>Cash on hand</h2><span class="big">€${(mostRecentCashValue.amount).toLocaleString()}</span></div>
   <div class="card"><h2>Non-cash assets</h2><span class="big">€${(mostRecentAssetValue.amount).toLocaleString()}</span></div>
   <div class="card"><h2>Liabilities</h2><span class="big">€${(mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
-  <div class="card grid-colspan-3"><h2>Liabilities</h2><span class="big">€${(mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
+  <div class="card grid-colspan-2"><h2>Net assets</h2><span class="big">€${(mostRecentCashValue.amount + mostRecentAssetValue.amount  + mostRecentLiabilityValue.amount).toLocaleString()}</span></div>
+  <div class="card"><h2>Pending income</h2><span class="big">€${(pending).toLocaleString()}</span></div>
 </div>
 
 <div class="grid grid-cols-1">
