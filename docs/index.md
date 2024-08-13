@@ -67,7 +67,7 @@ const mostRecentLiabilityValue = liabilities[liabilities.length - 1];
 assets.sort((a, b) => new Date(a.date) - new Date(b.date));
 const mostRecentAssetValue = assets[assets.length - 1];
 
-const pending = 1000 + 3500 + 1200
+const pending = 4000 * 2
 ```
 
 <div class="grid grid-cols-3">
