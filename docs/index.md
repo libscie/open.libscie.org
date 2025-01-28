@@ -50,7 +50,6 @@ const assets = FileAttachment("data/NonCashAssets.csv").csv({typed: true});
 const quarterlies = FileAttachment("data/quarterly-numbers-revenue.csv").csv({typed: true});
 ```
 
-
 <div class="hero">
   <h1>Our open journey, in numbers</h1>
   <h2>We keep on evolving what's here, so check back every now and then.</h2>
@@ -67,7 +66,7 @@ const mostRecentLiabilityValue = liabilities[liabilities.length - 1];
 assets.sort((a, b) => new Date(a.date) - new Date(b.date));
 const mostRecentAssetValue = assets[assets.length - 1];
 
-const pending = 20500
+const pending = 0
 ```
 
 <div class="grid grid-cols-3">
@@ -113,7 +112,7 @@ const pending = 20500
 
 ## Disclaimer
 
-The information provided on the website https://open.libscie.org is provided for informational purposes only.
+The information provided on the website <https://open.libscie.org> is provided for informational purposes only.
 
 We do not guarantee the accuracy of provided information. No rights or obligations can be inferred from the information as a result.
 
