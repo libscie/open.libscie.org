@@ -9,6 +9,7 @@ export default {
   pages: [
     { name: "Purpose-Vision-Mission", path: "/purpose-vision-mision" },
     { name: "Market analysis", path: "/market" },
+    { name: "What we offer", path: "/product" },
     // {
     //   // name: "Examples",
     //   pages: [
